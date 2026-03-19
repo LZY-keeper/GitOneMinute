@@ -1,0 +1,25 @@
+{
+  "pipeline_name": "边缘检测与直线检测管道",
+  "version": "1.0",
+  "description": "用于工业零件检测的视觉算法管道",
+  "processing_pipeline": [
+    {
+      "algorithm": "CannyEdgeDetector",
+      "parameters": {
+        "threshold1": 50.0,
+        "threshold2": 150.0,
+        "aperture_size": 3
+      }
+    },
+    {
+      "algorithm": "HoughLineDetector", 
+      "parameters": {
+        "rho": 1.0,
+        "theta": 0.0174533,
+        "threshold": 100,
+        "min_line_length": 50,
+        "max_line_gap": 10
+      }
+    }
+  ]
+}
